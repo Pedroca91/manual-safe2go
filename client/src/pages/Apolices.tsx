@@ -1,6 +1,7 @@
 import { Shield, FileText, AlertCircle, Edit, Copy, XCircle } from "lucide-react";
 
 export default function Apolices() {
+  const apolicesScreenshot = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663330515528/eOmKTaJdmqZTmvEe.webp";
   const colunas = [
     { nome: "Nº DOCUMENTO", desc: "Número de identificação da apólice ou certificado." },
     { nome: "SEGURADO", desc: "Nome da pessoa ou empresa segurada." },
@@ -34,6 +35,15 @@ export default function Apolices() {
           certificados que foram emitidos. Para acessá-la, clique em "APÓLICES E CERTIFICADOS" 
           no menu lateral.
         </p>
+
+        <div className="my-8 p-6 bg-card border-2 border-border rounded-lg brutal-shadow">
+          <h3 className="text-lg font-bold mb-4">Visualização da Página de Apólices</h3>
+          <img 
+            src={apolicesScreenshot} 
+            alt="Screenshot da página de Apólices do Safe2Go" 
+            className="w-full rounded-lg border-2 border-border"
+          />
+        </div>
 
         <div className="p-6 bg-card border-2 border-border rounded-lg brutal-shadow">
           <h2 className="text-3xl font-bold mb-6">Tela Principal de Apólices</h2>

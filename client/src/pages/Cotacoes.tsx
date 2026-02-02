@@ -1,6 +1,7 @@
 import { FileText, Edit, Trash2, Eye, RefreshCw } from "lucide-react";
 
 export default function Cotacoes() {
+  const cotacoesScreenshot = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663330515528/mVGYgSwvsygKXrBu.webp";
   const colunas = [
     { nome: "Nº COTAÇÃO", desc: "Número de identificação único da cotação." },
     { nome: "SEGURADO", desc: "Nome da pessoa ou empresa segurada." },
@@ -33,6 +34,15 @@ export default function Cotacoes() {
           criar, gerenciar e acompanhar o status de todas as suas cotações de seguro. Para 
           acessá-la, clique em "COTAÇÕES" no menu lateral.
         </p>
+
+        <div className="my-8 p-6 bg-card border-2 border-border rounded-lg brutal-shadow">
+          <h3 className="text-lg font-bold mb-4">Visualização da Página de Cotações</h3>
+          <img 
+            src={cotacoesScreenshot} 
+            alt="Screenshot da página de Cotações do Safe2Go" 
+            className="w-full rounded-lg border-2 border-border"
+          />
+        </div>
 
         <div className="p-6 bg-card border-2 border-border rounded-lg brutal-shadow">
           <h2 className="text-3xl font-bold mb-6">Tela Principal de Cotações</h2>

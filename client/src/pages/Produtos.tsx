@@ -1,6 +1,8 @@
 import { Package, Info } from "lucide-react";
 
 export default function Produtos() {
+  const screenshotUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663330515528/sjGozaxnsTKMRDSD.webp";
+  
   const produtos = [
     {
       nome: "Responsabilidade Civil Profissional e Material - RCPM",
@@ -54,6 +56,15 @@ export default function Produtos() {
           cotados e contratados através da plataforma Safe2Go. Cada produto é exibido em um 
           card individual, contendo uma breve descrição e as ações disponíveis.
         </p>
+
+        <div className="my-8 p-6 bg-card border-2 border-border rounded-lg brutal-shadow">
+          <h3 className="text-lg font-bold mb-4">Visualização da Página de Produtos</h3>
+          <img 
+            src={screenshotUrl} 
+            alt="Screenshot da página de Produtos do Safe2Go" 
+            className="w-full rounded-lg border-2 border-border"
+          />
+        </div>
 
         <div className="p-6 bg-card border-2 border-border rounded-lg brutal-shadow">
           <h2 className="text-3xl font-bold mb-6">Visualizando os Produtos</h2>

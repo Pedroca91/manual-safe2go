@@ -12,6 +12,7 @@ import {
   X
 } from "lucide-react";
 import { useState } from "react";
+import SearchBar from "./SearchBar";
 
 interface ManualLayoutProps {
   children: ReactNode;
@@ -35,9 +36,10 @@ export default function ManualLayout({ children }: ManualLayoutProps) {
     <div className="min-h-screen flex flex-col lg:flex-row">
       {/* Sidebar Desktop */}
       <aside className="hidden lg:block lg:w-80 bg-card border-r-[3px] border-border p-6 sticky top-0 h-screen overflow-y-auto">
-        <div className="mb-8">
+        <div className="mb-6">
           <h1 className="text-3xl font-bold text-primary mb-2">Safe2Go</h1>
-          <p className="text-sm text-muted-foreground font-medium">Manual do Usuário</p>
+          <p className="text-sm text-muted-foreground font-medium mb-4">Manual do Usuário</p>
+          <SearchBar />
         </div>
 
         <nav className="space-y-2">
@@ -46,20 +48,20 @@ export default function ManualLayout({ children }: ManualLayoutProps) {
             const isActive = location === item.href;
             
             return (
-              <Link key={item.href} href={item.href}>
-                <a
-                  className={`
-                    flex items-center gap-3 px-4 py-3 rounded-lg border-2 border-border
-                    transition-all duration-150
-                    ${isActive 
-                      ? 'bg-primary text-primary-foreground brutal-shadow-sm' 
-                      : 'bg-card hover:bg-muted brutal-shadow-hover'
-                    }
-                  `}
-                >
-                  <Icon className="w-5 h-5 flex-shrink-0" />
-                  <span className="font-medium">{item.label}</span>
-                </a>
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`
+                  flex items-center gap-3 px-4 py-3 rounded-lg border-2 border-border
+                  transition-all duration-150 block
+                  ${isActive 
+                    ? 'bg-primary text-primary-foreground brutal-shadow-sm' 
+                    : 'bg-card hover:bg-muted brutal-shadow-hover'
+                  }
+                `}
+              >
+                <Icon className="w-5 h-5 flex-shrink-0" />
+                <span className="font-medium">{item.label}</span>
               </Link>
             );
           })}
@@ -73,9 +75,9 @@ export default function ManualLayout({ children }: ManualLayoutProps) {
         </div>
       </aside>
 
-      {/* Mobile Header */}
+        {/* Mobile Header */}
       <div className="lg:hidden sticky top-0 z-50 bg-card border-b-[3px] border-border p-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mb-4">
           <div>
             <h1 className="text-2xl font-bold text-primary">Safe2Go</h1>
             <p className="text-xs text-muted-foreground font-medium">Manual do Usuário</p>
@@ -88,6 +90,7 @@ export default function ManualLayout({ children }: ManualLayoutProps) {
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
+        <SearchBar />
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
@@ -97,21 +100,21 @@ export default function ManualLayout({ children }: ManualLayoutProps) {
               const isActive = location === item.href;
               
               return (
-                <Link key={item.href} href={item.href}>
-                  <a
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`
-                      flex items-center gap-3 px-4 py-3 rounded-lg border-2 border-border
-                      transition-all duration-150
-                      ${isActive 
-                        ? 'bg-primary text-primary-foreground brutal-shadow-sm' 
-                        : 'bg-card hover:bg-muted'
-                      }
-                    `}
-                  >
-                    <Icon className="w-5 h-5 flex-shrink-0" />
-                    <span className="font-medium">{item.label}</span>
-                  </a>
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`
+                    flex items-center gap-3 px-4 py-3 rounded-lg border-2 border-border
+                    transition-all duration-150 block
+                    ${isActive 
+                      ? 'bg-primary text-primary-foreground brutal-shadow-sm' 
+                      : 'bg-card hover:bg-muted'
+                    }
+                  `}
+                >
+                  <Icon className="w-5 h-5 flex-shrink-0" />
+                  <span className="font-medium">{item.label}</span>
                 </Link>
               );
             })}
