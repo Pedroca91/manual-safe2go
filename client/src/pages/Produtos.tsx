@@ -1,7 +1,7 @@
 import { Package, Info } from "lucide-react";
 
 export default function Produtos() {
-  const screenshotUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663330515528/sjGozaxnsTKMRDSD.webp";
+  const screenshotUrl = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663330515528/JcNMhaAXXIpMCmom.png";
   
   const produtos = [
     {

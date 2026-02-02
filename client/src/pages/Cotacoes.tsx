@@ -1,7 +1,7 @@
 import { FileText, Edit, Trash2, Eye, RefreshCw } from "lucide-react";
 
 export default function Cotacoes() {
-  const cotacoesScreenshot = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663330515528/mVGYgSwvsygKXrBu.webp";
+  const cotacoesScreenshot = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663330515528/WHFsxBnDeLWoAdiI.png";
   const colunas = [
     { nome: "Nº COTAÇÃO", desc: "Número de identificação único da cotação." },
     { nome: "SEGURADO", desc: "Nome da pessoa ou empresa segurada." },

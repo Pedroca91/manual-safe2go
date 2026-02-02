@@ -1,7 +1,7 @@
 import { Shield, FileText, AlertCircle, Edit, Copy, XCircle } from "lucide-react";
 
 export default function Apolices() {
-  const apolicesScreenshot = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663330515528/eOmKTaJdmqZTmvEe.webp";
+  const apolicesScreenshot = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663330515528/yVhjfuhBZmbWqBYE.png";
   const colunas = [
     { nome: "Nº DOCUMENTO", desc: "Número de identificação da apólice ou certificado." },
     { nome: "SEGURADO", desc: "Nome da pessoa ou empresa segurada." },

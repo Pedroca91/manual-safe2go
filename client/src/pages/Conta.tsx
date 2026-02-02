@@ -1,6 +1,7 @@
 import { User, Lock, Save } from "lucide-react";
 
 export default function Conta() {
+  const contaScreenshot = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663330515528/mNGmaNFFcIdKZUaf.png";
   const dadosConta = [
     { campo: "Razão Social", desc: "Nome da empresa" },
     { campo: "CNPJ", desc: "Cadastro Nacional de Pessoa Jurídica" },
@@ -26,6 +27,15 @@ export default function Conta() {
           A seção "Dados da Conta" é onde o usuário pode gerenciar suas informações pessoais e 
           de acesso ao sistema. Para acessá-la, clique em "DADOS DA CONTA" no menu lateral.
         </p>
+
+        <div className="my-8 p-6 bg-card border-2 border-border rounded-lg brutal-shadow">
+          <h3 className="text-lg font-bold mb-4">Visualização da Página de Dados da Conta</h3>
+          <img 
+            src={contaScreenshot} 
+            alt="Screenshot da página de Dados da Conta do Safe2Go" 
+            className="w-full rounded-lg border-2 border-border"
+          />
+        </div>
 
         <div className="p-6 bg-card border-2 border-border rounded-lg brutal-shadow">
           <div className="flex items-center gap-3 mb-6">
