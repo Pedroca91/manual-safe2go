@@ -137,3 +137,27 @@
     transform: translate(4px, 4px);
   }
 }
+
+/* Hide Manus branding */
+[class*="manus"],
+[id*="manus"],
+[class*="badge"],
+[id*="badge"],
+[class*="logo"],
+[id*="logo"],
+[class*="branding"],
+[id*="branding"],
+[class*="powered"],
+[id*="powered"],
+div[style*="Manus"],
+div[style*="manus"],
+a[href*="manus.im"],
+a[href*="manus.space"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
