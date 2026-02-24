@@ -9,7 +9,8 @@ import {
   Shield, 
   User,
   Menu,
-  X
+  X,
+  MessageCircle
 } from "lucide-react";
 import { useState } from "react";
 import SearchBar from "./SearchBar";
@@ -126,6 +127,26 @@ export default function ManualLayout({ children }: ManualLayoutProps) {
       <main className="flex-1 p-6 lg:p-12 max-w-5xl">
         {children}
       </main>
+
+      {/* WhatsApp Widget */}
+      <div className="fixed bottom-6 right-6 z-40 group">
+        {/* Balao de Mensagem */}
+        <div className="absolute bottom-20 right-0 mb-2 bg-white border-2 border-border rounded-lg p-4 shadow-lg max-w-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
+          <p className="text-sm text-foreground font-medium">Se nao conseguiu achar a sua duvida, entra em contato com o nosso suporte pelo whatsapp</p>
+          <div className="absolute -bottom-2 right-4 w-4 h-4 bg-white border-2 border-border border-t-0 border-l-0 transform rotate-45"></div>
+        </div>
+        
+        {/* Botao WhatsApp */}
+        <a
+          href="https://wa.me/5511991762878"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full border-2 border-green-700 shadow-lg transition-all duration-200 hover:scale-110 brutal-shadow-sm"
+          title="Fale conosco no WhatsApp"
+        >
+          <MessageCircle className="w-7 h-7" />
+        </a>
+      </div>
     </div>
   );
 }
