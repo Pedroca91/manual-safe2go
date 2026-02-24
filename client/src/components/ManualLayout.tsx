@@ -138,7 +138,7 @@ export default function ManualLayout({ children }: ManualLayoutProps) {
         
         {/* Botao WhatsApp */}
         <a
-          href="https://wa.me/5511991762878"
+          href="https://wa.me/5511991762878?text=Oi!%20Estou%20com%20uma%20d%C3%BAvida%20sobre%20o%20sistema%20Safe2Go%20e%20n%C3%A3o%20consegui%20encontrar%20a%20resposta%20no%20manual.%20Podem%20me%20ajudar%3F"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full border-2 border-green-700 shadow-lg transition-all duration-200 hover:scale-110 brutal-shadow-sm"
