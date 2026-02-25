@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -58,6 +59,52 @@ function Router() {
 }
 
 function App() {
+  useEffect(() => {
+    // Remove "Made with Manus" badge
+    const removeManusBadge = () => {
+      // Remove by text content
+      const elements = document.querySelectorAll('*');
+      elements.forEach(el => {
+        if (el.textContent?.includes('Made with Manus') || el.textContent?.includes('Feito com Manus')) {
+          (el as HTMLElement).style.display = 'none';
+          (el as HTMLElement).style.visibility = 'hidden';
+          (el as HTMLElement).style.pointerEvents = 'none';
+        }
+      });
+      
+      // Remove by common badge selectors
+      const selectors = [
+        '[class*="manus-badge"]',
+        '[class*="made-with"]',
+        '[data-testid*="manus"]',
+        'div[role="tooltip"]',
+      ];
+      
+      selectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => {
+          el.remove();
+        });
+      });
+    };
+    
+    // Run immediately
+    removeManusBadge();
+    
+    // Run again after a delay to catch dynamically injected elements
+    const timeout = setTimeout(removeManusBadge, 500);
+    const timeout2 = setTimeout(removeManusBadge, 1000);
+    
+    // Watch for DOM changes
+    const observer = new MutationObserver(removeManusBadge);
+    observer.observe(document.body, { childList: true, subtree: true });
+    
+    return () => {
+      clearTimeout(timeout);
+      clearTimeout(timeout2);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
